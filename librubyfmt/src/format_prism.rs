@@ -3952,6 +3952,8 @@ fn format_implicit_rest_node() {
 }
 
 fn format_in_node<'src>(ps: &mut ParserState<'src>, in_node: prism::InNode<'src>) {
+    ps.at_offset(in_node.location().start_offset());
+    ps.emit_indent();
     ps.emit_in_keyword();
 
     ps.with_start_of_line(false, |ps| {

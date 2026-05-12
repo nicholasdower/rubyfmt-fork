@@ -53,3 +53,15 @@ in   {
      }
    puts first
 end
+
+# Nested in keyword
+class Foo
+  def foo
+    case value
+    in [a, b]
+      puts a
+    in {name: n}
+      puts n
+    end
+  end
+end
